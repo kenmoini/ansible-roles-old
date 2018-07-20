@@ -1,0 +1,19 @@
+galaxy_info:
+  author: Ken Moini
+  description: A simple Ansible Role to deploy Red Hat Identity Management on an IdM server
+  company: Fierce Software
+  license: GPLv3
+
+  min_ansible_version: 2.5
+
+  github_branch: fsw-deploy-idm-server
+
+  platforms:
+  - name: EL
+    versions:
+      - 7
+
+  galaxy_tags:
+    - idm
+    - freeipa
+    - rhel

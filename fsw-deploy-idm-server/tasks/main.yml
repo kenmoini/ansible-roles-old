@@ -1,0 +1,44 @@
+---
+# tasks file for fsw-deploy-idm
+
+- name: Update system
+  yum:
+    name: '*'
+    state: latest
+
+- name: Install firewalld
+  yum:
+    name: firewalld
+    state: latest
+
+- name: Set firewalld service to start and be enabled
+  service:
+    name: firewalld
+    state: started
+    enabled: true
+
+- name: Set firewalld settings
+  firewalld:
+    service: {{ item }}
+    permanent: true
+    immediate: true
+    state: enabled
+  with_items:
+    - freeipa-ldap
+    - freeipa-ldaps
+    - dns
+    - ntp
+    - http
+    - https
+
+- name: Install Red Hat Identity Management Packages
+  yum:
+    package: {{ item }}
+    state: latest
+  with_items:
+    - ipa-server
+    - ipa-server-dns
+
+- name: That is all folks!
+  dbg:
+    msg: Next, simple run ipa-server-install, then kinit admin to test after!

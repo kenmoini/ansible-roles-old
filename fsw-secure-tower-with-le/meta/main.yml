@@ -1,0 +1,38 @@
+galaxy_info:
+  author: Ken Moini
+  description: Secure your Ansible Tower Web UI with Let's Encrypt
+  company: Fierce Software
+
+  issue_tracker_url: https://github.com/kenmoini/fsw-secure-tower-with-le/issues
+
+  license: GPLv3
+
+  min_ansible_version: 2.5
+
+  platforms:
+  - name: EL
+    versions:
+      - 7
+  - name: Amazon
+  - name: Ubuntu
+    version:
+      - xenial
+      - trusty
+
+  categories:
+    - security
+
+  galaxy_tags:
+    - secure
+    - https
+    - ssl
+    - ansible
+    - tower
+    - awx
+    - letsencrypt
+    - le
+    - rhel
+    - ubuntu
+    - centos
+
+dependencies: []
